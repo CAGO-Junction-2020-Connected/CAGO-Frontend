@@ -10,7 +10,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Menu />
-      <Route exact path="/" render={() => <Main />} />
+      <Route exact path="/CAGO-Frontend" render={() => <Main />} />
       <Route
         path="/trash"
         render={() => <PlasticTrash currentUserPlastic={10} />}

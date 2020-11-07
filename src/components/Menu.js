@@ -5,7 +5,7 @@ import logoMain from '../assets/icons/logo_main.svg';
 const Menu = () => {
   return (
     <>
-      <Link to="/">
+      <Link to="/CAGO-Frontend">
         <img src={logoMain} style={{ width: '50px' }} alt="logo main" />
       </Link>
       <ul>
