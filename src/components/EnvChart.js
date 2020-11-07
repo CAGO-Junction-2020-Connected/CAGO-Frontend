@@ -5,13 +5,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React, { useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import { plasticPercentState } from '../selector';
 import whale from '../assets/animation_kits/whale.gif';
 import turtle from '../assets/animation_kits/turtle.gif';
 import seagull from '../assets/animation_kits/seagull.gif';
 import './EnvChart.css';
 
-const EnvChart = ({ currentUserPlasticPercent }) => {
+const EnvChart = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const plasticPercent = useRecoilValue(plasticPercentState);
 
   const handleMouseEnter = (e) => {
     const animationElement = e.target;
@@ -58,7 +61,7 @@ const EnvChart = ({ currentUserPlasticPercent }) => {
       </div>
       <div className="tooltiptext">
         <pre>
-          {`Your monthly usage: ${currentUserPlasticPercent}%\n\nYou have saved\nN seagulls\nM turtles\n or O whales`}
+          {`Your monthly usage: ${plasticPercent}%\n\nYou have saved\nN seagulls\nM turtles\n or O whales`}
         </pre>
       </div>
     </div>
