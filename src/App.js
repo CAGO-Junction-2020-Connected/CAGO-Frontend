@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
 import PlasticTrash from './components/PlasticTrash';
 import EnvChart from './components/EnvChart';
 import Menu from './components/Menu';

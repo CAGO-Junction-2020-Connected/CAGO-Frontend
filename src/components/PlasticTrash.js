@@ -2,7 +2,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { Engine, Render, World, Body, Bodies } from 'matter-js';
+import { plasticState } from '../states';
+import { plasticPercentState } from '../selector';
+import { BLUE_THRESHOLD, RED_THRESHOLD } from '../constants';
 import bg1 from '../assets/plastic_kits/bg1.svg';
 import bg2 from '../assets/plastic_kits/bg2.svg';
 import bg3 from '../assets/plastic_kits/bg3.svg';
@@ -10,22 +14,18 @@ import bg3 from '../assets/plastic_kits/bg3.svg';
 const STATIC_DENSITY = 15;
 const PARTICLE_SIZE = 40;
 const PARTICLE_BOUNCINESS = 0.5;
-const PLASTIC_MAX = 30;
-const BLUE_THRESHOLD = 60;
-const RED_THRESHOLD = 80;
+
 // console.log(document.getElementById('plastic1'));
 
-const PlasticTrash = ({ currentUserPlastic }) => {
+const PlasticTrash = () => {
   const boxRef = useRef(null);
   const canvasRef = useRef(null);
 
   const [constraints, setConstraints] = useState();
   const [scene, setScene] = useState();
   const [initialized, setInitialized] = useState(false);
-  const [numPlastics, setNumPlastics] = useState(currentUserPlastic);
-  const [plasticPercent, setPlasticPercent] = useState(
-    (numPlastics / PLASTIC_MAX) * 100,
-  );
+  const [numPlastics, setNumPlastics] = useRecoilState(plasticState);
+  const plasticPercent = useRecoilValue(plasticPercentState);
 
   const handleResize = useCallback(() => {
     setConstraints(boxRef.current.getBoundingClientRect());
@@ -35,7 +35,6 @@ const PlasticTrash = ({ currentUserPlastic }) => {
     if (scene) {
       addPlastic(1);
       setNumPlastics(numPlastics + 1);
-      setPlasticPercent(((numPlastics + 1) / PLASTIC_MAX) * 100);
     }
   });
 
@@ -216,7 +215,7 @@ const PlasticTrash = ({ currentUserPlastic }) => {
               transform: 'translate(-50%, -25%)',
             }}
           >
-            {`${plasticPercent.toFixed(0)}%`}
+            {`${plasticPercent}%`}
           </p>
           <img
             src={
