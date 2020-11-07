@@ -1,4 +1,4 @@
-# Frontend for Some App
+# Frontend for CAGO
 
 1. Clone this repository
 2. `$ yarn`
