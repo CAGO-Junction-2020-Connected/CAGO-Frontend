@@ -21,6 +21,7 @@ const PlasticTrash = ({ currentUserPlastic }) => {
 
   const [constraints, setConstraints] = useState();
   const [scene, setScene] = useState();
+  const [initialized, setInitialized] = useState(false);
   const [numPlastics, setNumPlastics] = useState(currentUserPlastic);
   const [plasticPercent, setPlasticPercent] = useState(
     (numPlastics / PLASTIC_MAX) * 100,
@@ -172,18 +173,22 @@ const PlasticTrash = ({ currentUserPlastic }) => {
       resizeRect(box[0], 'floor', width, height);
       resizeRect(box[1], 'left', width, height);
       resizeRect(box[2], 'right', width, height);
-      addPlastic(numPlastics);
+
+      if (!initialized) {
+        addPlastic(numPlastics);
+        setInitialized(!initialized);
+      }
     }
   }, [scene, constraints]);
 
   return (
-    <div style={{ position: 'relative', width: '300px', height: '608px' }}>
+    <>
       <button
         type="button"
         style={{
           cursor: 'pointer',
           display: 'block',
-          width: '100%',
+          width: '300px',
           textAlign: 'center',
           marginBottom: '16px',
         }}
@@ -191,41 +196,43 @@ const PlasticTrash = ({ currentUserPlastic }) => {
       >
         Generate
       </button>
-      <div
-        ref={boxRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          textAlign: 'center',
-        }}
-      >
-        <p
+      <div style={{ position: 'relative', width: '300px', height: '608px' }}>
+        <div
+          ref={boxRef}
           style={{
-            position: 'absolute',
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '38px',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -25%)',
+            width: '100%',
+            height: '100%',
+            textAlign: 'center',
           }}
         >
-          {`${plasticPercent.toFixed(0)}%`}
-        </p>
-        <img
-          src={
-            plasticPercent >= RED_THRESHOLD
-              ? bg3
-              : plasticPercent >= BLUE_THRESHOLD
-              ? bg2
-              : bg1
-          }
-          style={{ position: 'absolute', zIndex: -1 }}
-          alt="bg"
-        />
-        <canvas ref={canvasRef} />
+          <p
+            style={{
+              position: 'absolute',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '38px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -25%)',
+            }}
+          >
+            {`${plasticPercent.toFixed(0)}%`}
+          </p>
+          <img
+            src={
+              plasticPercent >= RED_THRESHOLD
+                ? bg3
+                : plasticPercent >= BLUE_THRESHOLD
+                ? bg2
+                : bg1
+            }
+            style={{ position: 'absolute', zIndex: -1 }}
+            alt="bg"
+          />
+          <canvas ref={canvasRef} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
