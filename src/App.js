@@ -1,7 +1,8 @@
 import React from 'react';
+import PlasticTrash from './components/PlasticTrash';
 
 const App = () => {
-  return <p>This is App component!</p>;
+  return <PlasticTrash />;
 };
 
 export default App;
