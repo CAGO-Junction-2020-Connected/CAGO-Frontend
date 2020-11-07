@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/CAGO-Frontend/static/css/main.2f47da00.chunk.css",
-    "main.js": "/CAGO-Frontend/static/js/main.d4adadcb.chunk.js",
-    "main.js.map": "/CAGO-Frontend/static/js/main.d4adadcb.chunk.js.map",
+    "main.js": "/CAGO-Frontend/static/js/main.4d33a857.chunk.js",
+    "main.js.map": "/CAGO-Frontend/static/js/main.4d33a857.chunk.js.map",
     "runtime-main.js": "/CAGO-Frontend/static/js/runtime-main.fc4e8438.js",
     "runtime-main.js.map": "/CAGO-Frontend/static/js/runtime-main.fc4e8438.js.map",
-    "static/js/2.7b4eb694.chunk.js": "/CAGO-Frontend/static/js/2.7b4eb694.chunk.js",
-    "static/js/2.7b4eb694.chunk.js.map": "/CAGO-Frontend/static/js/2.7b4eb694.chunk.js.map",
+    "static/js/2.c5f18d86.chunk.js": "/CAGO-Frontend/static/js/2.c5f18d86.chunk.js",
+    "static/js/2.c5f18d86.chunk.js.map": "/CAGO-Frontend/static/js/2.c5f18d86.chunk.js.map",
     "index.html": "/CAGO-Frontend/index.html",
     "static/css/main.2f47da00.chunk.css.map": "/CAGO-Frontend/static/css/main.2f47da00.chunk.css.map",
-    "static/js/2.7b4eb694.chunk.js.LICENSE.txt": "/CAGO-Frontend/static/js/2.7b4eb694.chunk.js.LICENSE.txt",
+    "static/js/2.c5f18d86.chunk.js.LICENSE.txt": "/CAGO-Frontend/static/js/2.c5f18d86.chunk.js.LICENSE.txt",
     "static/media/bg1.203a0d0f.svg": "/CAGO-Frontend/static/media/bg1.203a0d0f.svg",
     "static/media/bg2.a9ae58bf.svg": "/CAGO-Frontend/static/media/bg2.a9ae58bf.svg",
     "static/media/bg3.2be3f16e.svg": "/CAGO-Frontend/static/media/bg3.2be3f16e.svg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.fc4e8438.js",
-    "static/js/2.7b4eb694.chunk.js",
+    "static/js/2.c5f18d86.chunk.js",
     "static/css/main.2f47da00.chunk.css",
-    "static/js/main.d4adadcb.chunk.js"
+    "static/js/main.4d33a857.chunk.js"
   ]
 }
