@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CAGO-Frontend/static/css/main.2f47da00.chunk.css",
-    "main.js": "/CAGO-Frontend/static/js/main.66f46413.chunk.js",
-    "main.js.map": "/CAGO-Frontend/static/js/main.66f46413.chunk.js.map",
+    "main.js": "/CAGO-Frontend/static/js/main.2bbc029b.chunk.js",
+    "main.js.map": "/CAGO-Frontend/static/js/main.2bbc029b.chunk.js.map",
     "runtime-main.js": "/CAGO-Frontend/static/js/runtime-main.fc4e8438.js",
     "runtime-main.js.map": "/CAGO-Frontend/static/js/runtime-main.fc4e8438.js.map",
     "static/js/2.c6757660.chunk.js": "/CAGO-Frontend/static/js/2.c6757660.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.fc4e8438.js",
     "static/js/2.c6757660.chunk.js",
     "static/css/main.2f47da00.chunk.css",
-    "static/js/main.66f46413.chunk.js"
+    "static/js/main.2bbc029b.chunk.js"
   ]
 }
