@@ -16,10 +16,12 @@ const Login = ({ history }) => {
         withCredentials: true,
       })
       .then((res) => {
-        setUser(res.data.name);
-        setIsLoggedIn(true);
-        setPlastic(res.data.plasticCount);
-        history.push('/CAGO-Frontend');
+        if (res.data) {
+          setUser(res.data.name);
+          setIsLoggedIn(true);
+          setPlastic(res.data.plasticCount);
+          history.push('/CAGO-Frontend');
+        }
       });
   };
 
