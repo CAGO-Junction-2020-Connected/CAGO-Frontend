@@ -10,7 +10,7 @@ const Menu = () => {
   const plasticPercent = useRecoilValue(plasticPercentState);
   function getUser() {
     console.log("Getting user")
-    axios.get('http://localhost:3001/db/products', {
+    axios.get('http://localhost:3001/db/current-user', {
       withCredentials: true})
       .then(res => {
         console.log(res.data)

@@ -4,12 +4,14 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { Engine, Render, World, Body, Bodies } from 'matter-js';
+import axios from 'axios';
 import { plasticState } from '../states';
 import { plasticPercentState } from '../selector';
 import { BLUE_THRESHOLD, RED_THRESHOLD } from '../constants';
 import bg1 from '../assets/plastic_kits/bg1.svg';
 import bg2 from '../assets/plastic_kits/bg2.svg';
 import bg3 from '../assets/plastic_kits/bg3.svg';
+
 
 const STATIC_DENSITY = 15;
 const PARTICLE_SIZE = 40;
@@ -35,6 +37,13 @@ const PlasticTrash = () => {
     if (scene) {
       addPlastic(1);
       setNumPlastics(numPlastics + 1);
+      axios('http://localhost:3001/db/increment-count', {
+        method: "post",
+        withCredentials: true
+      })
+      .then(res => {
+        console.log(res.data)
+      })
     }
   });
 
