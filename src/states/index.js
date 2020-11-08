@@ -6,4 +6,14 @@ const plasticState = atom({
   default: 0,
 });
 
-export { plasticState };
+const isLoggedInState = atom({
+  key: 'isLoggedInState',
+  default: false,
+});
+
+const userState = atom({
+  key: 'userState',
+  default: '',
+});
+
+export { plasticState, isLoggedInState, userState };
