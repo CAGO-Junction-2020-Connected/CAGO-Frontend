@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import logoMain from '../assets/icons/logo_main.svg';
 import { isLoggedInState, userState } from '../states';
 import { plasticPercentState } from '../selector';
-import './Menu.css';
 
 const Menu = () => {
   const plasticPercent = useRecoilValue(plasticPercentState);
