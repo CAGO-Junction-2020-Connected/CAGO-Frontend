@@ -28,10 +28,10 @@ const Menu = () => {
           <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/trash">Trash</Link>
+          <Link to={isLoggedIn ? '/trash' : '/login'}>Trash</Link>
         </li>
         <li>
-          <Link to="/chart">Chart</Link>
+          <Link to={isLoggedIn ? '/chart' : '/login'}>Chart</Link>
         </li>
       </ul>
       <hr />

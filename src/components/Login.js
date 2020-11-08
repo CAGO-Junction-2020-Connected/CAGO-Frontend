@@ -1,24 +1,25 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import axios from 'axios';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { isLoggedInState, userState } from '../states';
-import './Login.css';
+import { plasticState, isLoggedInState, userState } from '../states';
 
-const Login = () => {
+const Login = ({ history }) => {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(isLoggedInState);
+  const setPlastic = useSetRecoilState(plasticState);
   const setUser = useSetRecoilState(userState);
 
   const authenticate = () => {
     axios
-      .get('http://localhost:3001/db/products', {
+      .get('http://localhost:3001/db/current-user', {
         withCredentials: true,
       })
       .then((res) => {
         setUser(res.data.name);
         setIsLoggedIn(true);
-        console.log(res.data);
+        setPlastic(res.data.plasticCount);
+        history.push('/CAGO-Frontend');
       });
   };
 
